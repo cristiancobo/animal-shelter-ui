@@ -5,7 +5,7 @@ export const AnimalController = {
         return axios({
             method: 'POST',
             baseURL: process.env.API,
-            url: `animals`,
+            url: 'animals',
             data: animal,
         })
     },

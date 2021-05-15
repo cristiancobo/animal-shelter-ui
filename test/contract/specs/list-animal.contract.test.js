@@ -1,13 +1,15 @@
 import {Matchers} from '@pact-foundation/pact';
 import {AnimalController} from '../../../controllers';
-import {provider} from '../config/initPact';
+import {init_provider} from '../config/initPact';
+
+const provider = init_provider();
 
 describe('Animal Service', () => {
     describe('When a request to list all animals is made', () => {
         beforeAll(async () => {
             await provider.setup();
             await provider.addInteraction({
-                uponReceiving: 'a request to list all animals',
+                uponReceiving: 'Request to list all animals',
                 state: "has animals",
                 withRequest: {
                     method: 'GET',
