@@ -24,9 +24,9 @@ jobs:
     - name: run contract tests
       run: npm run test:contract
       env:
-        API: ${{PACT_URL_CRISTIANCOBO.API}}
+        API: ${{CONTRACT.API}}
     - name: publish contracts
       env:
-        PACT_BROKER_BASE_URL: ${{PACT_URL_CRISTIANCOBO.URL}}
-        PACT_BROKER_TOKEN: ${{PACT_URL_CRISTIANCOBO.TOKEN}}
+        PACT_BROKER_BASE_URL: ${{CONTRACT.URL}}
+        PACT_BROKER_TOKEN: ${{CONTRACT.TOKEN}}
       run: npm run contract:publish
