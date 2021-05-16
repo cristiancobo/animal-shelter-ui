@@ -24,9 +24,9 @@ jobs:
     - name: run contract tests
       run: npm run test:contract
       env:
-        API: ${{CONTRACT.API}}
+        API: ${{secrets.API}}
     - name: publish contracts
       env:
-        PACT_BROKER_BASE_URL: ${{CONTRACT.URL}}
-        PACT_BROKER_TOKEN: ${{CONTRACT.TOKEN}}
+        PACT_BROKER_BASE_URL: ${{secrets.URL}}
+        PACT_BROKER_TOKEN: ${{secrets.TOKEN}}
       run: npm run contract:publish
