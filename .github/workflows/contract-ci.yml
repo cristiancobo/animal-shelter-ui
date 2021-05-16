@@ -24,13 +24,5 @@ jobs:
     - run: npm run build --if-present
     - name: run component tests
       run: npm run test:component
-    - name: run contract tests
-      run: npm run test:contract
-      env:
-        API: ${{PACT_URL_CRISTIANCOBO.API}}
-    - name: publish contracts
-      env:
-        PACT_BROKER_BASE_URL: ${{PACT_URL_CRISTIANCOBO.URL}}
-        PACT_BROKER_TOKEN: ${{PACT_URL_CRISTIANCOBO.TOKEN}}
-      run: npm run contract:publish
+ 
           
